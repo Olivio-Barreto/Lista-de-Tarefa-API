@@ -21,9 +21,11 @@ public class CreateTarefaHandler : IRequestHandler<CreateTarefaCommand, TarefaRe
     
     public async Task<TarefaResponse> Handle(CreateTarefaCommand request, CancellationToken cancellationToken)
     {
+        if (await _tarefaRepository.GetByNameAsync(request.Name) != null) 
+            throw new InvalidOperationException("Tarefa not found");
         var tarefa = _mapper.Map<Tarefa>(request);
         _tarefaRepository.Create(tarefa);
-         await _unitOfWork.Commit(cancellationToken);
+        await _unitOfWork.Commit(cancellationToken);
         return _mapper.Map<TarefaResponse>(tarefa);
     }
 }
