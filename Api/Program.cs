@@ -1,3 +1,4 @@
+using Api.ExtensionMethods;
 using Application;
 using Infra;
 
@@ -18,6 +19,8 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+app.MapEndPoints();
 
 app.UseHttpsRedirection();
 
