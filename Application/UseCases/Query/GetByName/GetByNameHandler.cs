@@ -1,10 +1,9 @@
 using Application.Dto;
 using AutoMapper;
-using Core.Domain;
 using Core.Interfaces;
 using MediatR;
 
-namespace Application.UseCases.Query.GetByNale;
+namespace Application.UseCases.Query.GetByName;
 
 public class GetByNameHandler : IRequestHandler<GetByNameQuery, TarefaResponse>
 {

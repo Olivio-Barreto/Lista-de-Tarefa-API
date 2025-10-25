@@ -1,8 +1,7 @@
 using Application.Dto;
-using Core.Domain;
 using MediatR;
 
-namespace Application.UseCases.Query.GetByNale;
+namespace Application.UseCases.Query.GetByName;
 
 public record GetByNameQuery : IRequest<TarefaResponse>
 {
