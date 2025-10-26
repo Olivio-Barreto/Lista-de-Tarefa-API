@@ -7,5 +7,5 @@ public interface IBaseRepository<TEntity>  where TEntity : BaseEntity
     void Create(TEntity entity);
     void Update(TEntity entity);
     void Delete(TEntity entity);
-    Task<IEnumerable<TEntity>>  GetAll();
+    Task<IEnumerable<TEntity>>  GetAllAsync();
 }

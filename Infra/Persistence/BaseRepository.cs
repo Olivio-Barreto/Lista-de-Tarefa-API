@@ -32,7 +32,7 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where T
         Context.Set<TEntity>().Remove(entity);
     }
 
-    public async Task<IEnumerable<TEntity>> GetAll()
+    public async Task<IEnumerable<TEntity>> GetAllAsync()
     {
         var result = await Context.Set<TEntity>().OrderBy(x => x.DateCreated).ToListAsync();
         return result;
